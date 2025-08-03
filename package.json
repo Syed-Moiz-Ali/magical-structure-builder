@@ -1,0 +1,53 @@
+{
+  "name": "file-folder-structure-generator",
+  "displayName": "file-folder-structure-generator",
+  "description": "Project Structure Generator is a powerful Visual Studio Code extension that helps you quickly scaffold complex folder and file hierarchies for any type of project ",
+  "version": "0.0.1",
+  "publisher": "Syed Moiz Ali",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Syed-Moiz-Ali/file-structure-generator"
+  },
+  "bugs": {
+    "url": "https://github.com/Syed-Moiz-Ali/file-structure-generator/issues"
+  },
+  "homepage": "https://github.com/Syed-Moiz-Ali/file-structure-generator#readme",
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.openInputEditor",
+    "onCommand:extension.generateStructure"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "universalGenerator.createFromText",
+        "title": "Flutter: Open Structure Editor"
+      },
+      {
+        "command": "universalGenerator.createFromActiveEditor",
+        "title": "Create Project Structure"
+      },
+      {
+        "command": "universalGenerator.previewStructure",
+        "title": "Preview Structure"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.102.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.25.1",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
