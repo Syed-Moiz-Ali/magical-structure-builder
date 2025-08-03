@@ -1,53 +1,213 @@
 {
-  "name": "file-folder-structure-generator",
-  "displayName": "file-folder-structure-generator",
-  "description": "Project Structure Generator is a powerful Visual Studio Code extension that helps you quickly scaffold complex folder and file hierarchies for any type of project ",
-  "version": "0.0.1",
+  "name": "magical-structure-builder",
+  "displayName": "🚀 Magical Project Builder - Create Cool Projects Easily! ✨",
+  "description": "🎉 The EASIEST way for kids and beginners to create awesome project folders! Just write what you want, click the magic button, and BOOM - your project is ready! Perfect for students, teachers, and anyone learning to code! 🌟",
+  "version": "2.1.0",
   "publisher": "Syed Moiz Ali",
+  "icon": "icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Syed-Moiz-Ali/file-structure-generator"
+    "url": "https://github.com/Syed-Moiz-Ali/magical-structure-builder"
   },
   "bugs": {
-    "url": "https://github.com/Syed-Moiz-Ali/file-structure-generator/issues"
+    "url": "https://github.com/Syed-Moiz-Ali/magical-structure-builder/issues"
   },
-  "homepage": "https://github.com/Syed-Moiz-Ali/file-structure-generator#readme",
+  "homepage": "https://github.com/Syed-Moiz-Ali/magical-structure-builder#readme",
   "engines": {
     "vscode": "^1.102.0"
   },
   "categories": [
-    "Other"
+    "Education",
+    "Other",
+    "Snippets",
+    "Productivity"
+  ],
+  "keywords": [
+    "easy",
+    "simple",
+    "beginner",
+    "student",
+    "teacher",
+    "classroom",
+    "learning",
+    "education",
+    "kid-friendly",
+    "project-maker",
+    "folder-creator",
+    "file-builder",
+    "scaffold",
+    "template",
+    "generator",
+    "react",
+    "javascript",
+    "python",
+    "web",
+    "mobile",
+    "game"
   ],
   "activationEvents": [
-    "onCommand:extension.openInputEditor",
-    "onCommand:extension.generateStructure"
+    "*"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
         "command": "universalGenerator.createFromText",
-        "title": "Flutter: Open Structure Editor"
+        "title": "🎯 Create Amazing Project Structure! 🚀",
+        "category": "Magical Builder",
+        "icon": "$(rocket)"
       },
       {
-        "command": "universalGenerator.createFromActiveEditor",
-        "title": "Create Project Structure"
+        "command": "universalGenerator.showTutorial",
+        "title": "📚 Learn How to Build Projects! 🎓",
+        "category": "Magical Builder",
+        "icon": "$(book)"
       },
       {
-        "command": "universalGenerator.previewStructure",
-        "title": "Preview Structure"
+        "command": "universalGenerator.showQuickPick",
+        "title": "✨ Open Magical Menu! 🌟",
+        "category": "Magical Builder",
+        "icon": "$(star)"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "🌟 Magical Structure Builder Settings",
+      "properties": {
+        "magicalStructureBuilder.hasSeenWelcome": {
+          "type": "boolean",
+          "default": false,
+          "description": "🎉 Whether you've seen our awesome welcome message!"
+        },
+        "magicalStructureBuilder.autoRefresh": {
+          "type": "boolean",
+          "default": true,
+          "description": "✨ Automatically refresh the magical buttons when you type"
+        },
+        "magicalStructureBuilder.animationSpeed": {
+          "type": "number",
+          "default": 2000,
+          "minimum": 1000,
+          "maximum": 5000,
+          "description": "🎆 How fast the sparkles animate (in milliseconds)"
+        },
+        "magicalStructureBuilder.enableKidMode": {
+          "type": "boolean",
+          "default": true,
+          "description": "🎮 Enable extra kid-friendly features and messages"
+        },
+        "magicalStructureBuilder.defaultTemplate": {
+          "type": "string",
+          "enum": [
+            "website",
+            "react",
+            "python",
+            "mobile",
+            "game",
+            "custom"
+          ],
+          "default": "website",
+          "description": "🎨 Your favorite project template to start with"
+        },
+        "magicalStructureBuilder.enableProgressCelebration": {
+          "type": "boolean",
+          "default": true,
+          "description": "🎉 Show fun celebrations when creating projects"
+        },
+        "magicalStructureBuilder.showHelpfulTips": {
+          "type": "boolean",
+          "default": true,
+          "description": "💡 Show helpful tips and encouragement"
+        },
+        "magicalStructureBuilder.themeColor": {
+          "type": "string",
+          "enum": [
+            "rainbow",
+            "ocean",
+            "forest",
+            "sunset",
+            "galaxy"
+          ],
+          "default": "rainbow",
+          "description": "🌈 Choose your favorite color theme for messages"
+        },
+        "magicalStructureBuilder.customTemplatesPath": {
+          "type": "string",
+          "default": "",
+          "description": "📁 Path to your custom templates folder (for advanced users)"
+        },
+        "magicalStructureBuilder.enableTips": {
+          "type": "boolean",
+          "default": true,
+          "description": "💡 Show helpful tips and tricks while you work"
+        },
+        "magicalStructureBuilder.autoOpenFirstFile": {
+          "type": "boolean",
+          "default": true,
+          "description": "📝 Automatically open the first file after creating a project"
+        }
+      }
+    },
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "universalGenerator.createFromText",
+          "group": "magical",
+          "when": "explorerResourceIsFolder"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "universalGenerator.showQuickPick",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
-    "package": "vsce package"
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish"
   },
   "devDependencies": {
     "@types/vscode": "^1.102.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
     "eslint": "^9.25.1",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
     "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "extensionPack": [],
+  "badges": [
+    {
+      "url": "https://img.shields.io/badge/Kid%20Friendly-✨%20YES!-brightgreen",
+      "href": "https://github.com/Syed-Moiz-Ali/magical-structure-builder",
+      "description": "This extension is designed to be kid-friendly and educational!"
+    },
+    {
+      "url": "https://img.shields.io/badge/Beginner%20Friendly-🚀%20Absolutely!-blue",
+      "href": "https://github.com/Syed-Moiz-Ali/magical-structure-builder",
+      "description": "Perfect for coding beginners and students!"
+    },
+    {
+      "url": "https://img.shields.io/badge/Teachers%20Love%20It-🎓%20YES!-purple",
+      "href": "https://github.com/Syed-Moiz-Ali/magical-structure-builder",
+      "description": "Great for classroom coding projects!"
+    }
+  ],
+  "sponsor": {
+    "url": "https://github.com/sponsors/Syed-Moiz-Ali"
   }
 }
