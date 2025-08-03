@@ -1,9 +1,10 @@
 {
   "name": "magical-structure-builder",
-  "displayName": "🚀 Magical Project Builder - Create Cool Projects Easily! ✨",
-  "description": "🎉 The EASIEST way for kids and beginners to create awesome project folders! Just write what you want, click the magic button, and BOOM - your project is ready! Perfect for students, teachers, and anyone learning to code! 🌟",
+  "displayName": "Magical Project Builder - Create Cool Projects Easily! ✨",
+  "description": "The EASIEST way for kids and beginners to create awesome project folders! Just write what you want, click the magic button, and BOOM - your project is ready! Perfect for students, teachers, and anyone learning to code! 🌟",
   "version": "2.1.0",
   "publisher": "Syed Moiz Ali",
+  "license": "MIT",
   "icon": "icon.png",
   "repository": {
     "type": "git",
@@ -19,8 +20,7 @@
   "categories": [
     "Education",
     "Other",
-    "Snippets",
-    "Productivity"
+    "Snippets"
   ],
   "keywords": [
     "easy",
@@ -46,7 +46,10 @@
     "game"
   ],
   "activationEvents": [
-    "*"
+    "onLanguage:plaintext",
+    "onLanguage:markdown",
+    "workspaceContains:**/*.md",
+    "workspaceContains:**/*.txt"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -163,16 +166,6 @@
         }
       ]
     }
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js",
-    "package": "vsce package",
-    "publish": "vsce publish"
   },
   "devDependencies": {
     "@types/vscode": "^1.102.0",

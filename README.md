@@ -42,7 +42,7 @@ Transform your development experience with our magical universal project structu
 
 1. **Open VS Code** (that's your coding app!)
 2. **Click the Extensions button** 🧩 (left side panel)
-3. **Search for**: `"Universal Magical Project Builder"`
+3. **Search for**: `"Magical Project Builder"`
 4. **Click the "Install" button** 🔽
 5. **Wait for the magic to install!** ✨
 
