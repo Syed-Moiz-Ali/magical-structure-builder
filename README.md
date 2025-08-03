@@ -357,9 +357,10 @@ _Whether you're building your first "Hello World" or architecting enterprise app
 
 **🔗 Connect with our global community:**
 
-- 📱 **Telegram**: [Join our dev chat](https://t.me/magicalbuilder)
+<!-- - 📱 **Telegram**: [Join our dev chat](https://t.me/magicalbuilder)
 - 💼 **LinkedIn**: [Professional network](https://linkedin.com/company/magical-builder)
-- 🐦 **Twitter**: [@MagicalBuilder](https://twitter.com/magicalbuilder)
+- 🐦 **Twitter**: [@MagicalBuilder](https://twitter.com/magicalbuilder) -->
+
 - 📧 **Email**: dev.syedmoizali@gmail.com
 
 _Transform your development workflow today - because every great project starts with great structure! ✨_
